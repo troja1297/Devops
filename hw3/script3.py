@@ -1,23 +1,31 @@
 import time
-
+import re
 
 def deduplicate(symbols):
     """
-    This is delete duplicate words/symbols
+    This is delete duplicate and counting words/symbols
     :param symbols: list with words/symbols
     :return: list without duplicate words/symbols
     """
     buf = list()
+    res = list()
     for symbol in symbols:
         buf.append([symbol, symbols.count(symbol)])
     for val in buf:
-        if val in buf:
-            buf.remove(val)
-    return buf
+        if val not in res:
+            res.append(val)
+
+    return res
 
 start_time = time.clock()
 print("Введите несколько слов:")
-str = input().lower().split()
-res = deduplicate(str).__str__()
 
-print(res + " " + (time.clock() - start_time).__str__() + " seconds")
+res = deduplicate(input().lower().split())
+sorted(res, reverse=False)
+
+f = res[0][1]
+for var in res:
+    if f == var[1]:
+        print(var[0] + " - " + var[1].__str__())
+
+print((time.clock() - start_time).__str__() + " seconds")

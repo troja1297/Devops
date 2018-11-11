@@ -14,5 +14,5 @@ for var in str:
     except Exception as ex:
         pass
 
-
-print(res.__str__() + " " + (time.clock() - start_time).__str__() + " seconds")
+print(res)
+print((time.clock() - start_time).__str__() + " seconds")

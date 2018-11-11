@@ -2,7 +2,7 @@ import time
 
 s_time = time.clock()
 print("Введите последовательность символов: ")
-str = input().lower()
+str = input().lower().split()
 buf = list()
 for char in str:
     if char not in buf:
@@ -10,6 +10,7 @@ for char in str:
 res = ""
 for char in buf:
     res += char
-print(res + " " + (time.clock() - s_time).__str__() + " seconds")
+print(res)
+print((time.clock() - s_time).__str__() + " seconds")
 
 
