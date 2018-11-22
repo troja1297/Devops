@@ -10,7 +10,7 @@ for char in str:
 res = ""
 for char in buf:
     res += char
-print(res)
+print(str(res) + " ")
 print((time.clock() - s_time).__str__() + " seconds")
 
 
