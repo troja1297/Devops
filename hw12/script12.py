@@ -1,14 +1,10 @@
 def fib(n):
-    i = 2
-    f1 = f2 = 1
-    print(1)
-    while i < n:
-        f_sum = f2 + f1
-        f1 = f2
-        f2 = f_sum
-        i += 1
-        print(f_sum)
-    return f_sum
+    a, b, c = 1, 1, 1
+    while c < n:
+        c += 1
+        yield a
+        a, b = b, a + b
 
 
-fib(100)
+for x in fib(20):
+    print(x)

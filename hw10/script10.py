@@ -7,7 +7,7 @@ def kollatch(number, stepcount=0):
             res = (number * 3) + 1
 
     if res < 1:
-        print("Колличество шагов: " + str(stepcount + 1))
+        print("Колличество шагов: " + str(stepcount))
     else:
         print(str(int(res)))
         stepcount += 1
