@@ -7,12 +7,11 @@ def kollatch(number, stepcount=0):
             res = (number * 3) + 1
 
     if res < 1:
-        print("Колличество шагов: " + str(stepcount))
+        return stepcount
     else:
-        print(str(int(res)))
         stepcount += 1
-        kollatch(res, stepcount)
+        return kollatch(res, stepcount)
 
 
-print("Введите любое натуральное число")
-kollatch(int(input()))
+print("Введите число;")
+print(kollatch(int(input())))
